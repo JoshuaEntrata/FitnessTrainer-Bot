@@ -1,1 +1,1 @@
-# ChatGPT-Bot
+# FitnessTrainer-Bot
