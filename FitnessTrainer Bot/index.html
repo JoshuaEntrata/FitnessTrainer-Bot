@@ -12,19 +12,47 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <input type="text" id="input-age" placeholder="Age" />
-      <input type="text" id="input-gender" placeholder="Gender" />
-      <input type="text" id="input-weight" placeholder="Weight" />
-      <input type="text" id="input-height" placeholder="Height" />
-      <input type="text" id="input-goal" placeholder="Goal" />
+    <div class="window-wrapper">
+      <div class="window-title">
+        <div class="dots">
+          <i class="fa fa-circle"></i>
+          <i class="fa fa-circle"></i>
+          <i class="fa fa-circle"></i>
+          <div class="title"><span>FitnessTrainer Bot</span></div>
+        </div>
+      </div>
 
-      <button id="input-button">
-        <i class="fa-solid fa-paper-plane" id="button-icon"></i>
-      </button>
+      <div class="window-area">
+        <div class="input-area">
+          <div class="field-group">
+            <input type="text" id="input-age" placeholder="Age" />
+            <label for="input-age">Age</label>
+          </div>
+          <div class="field-group">
+            <input type="text" id="input-gender" placeholder="Gender" />
+            <label for="input-gender">Gender</label>
+          </div>
+          <div class="field-group">
+            <input type="text" id="input-weight" placeholder="Weight" />
+            <label for="input-weight">Weight</label>
+          </div>
+          <div class="field-group">
+            <input type="text" id="input-height" placeholder="Height" />
+            <label for="input-height">Height</label>
+          </div>
+          <div class="field-group">
+            <input type="text" id="input-goal" placeholder="Goal" />
+            <label for="input-goal">Goal</label>
+          </div>
 
-      <div class="chat-container">
-        <div id="chat-log"></div>
+          <button id="input-button">
+            <i class="fa-solid fa-paper-plane" id="button-icon"></i>
+          </button>
+        </div>
+
+        <div class="chat-container">
+          <div id="chat-log"></div>
+        </div>
       </div>
     </div>
     <script src="index.js"></script>

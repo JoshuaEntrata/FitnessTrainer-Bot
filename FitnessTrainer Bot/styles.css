@@ -7,20 +7,102 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #343541;
+  background-color: lightblue;
 }
 
-.container {
-  width: 90%;
-  height: 100vh;
+.window-wrapper {
+  background: #fff;
+  width: 1000px;
+  margin: 30px auto;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  min-height: 530px;
+  position: relative;
+}
+
+.window-title {
+  padding: 14px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.window-title .title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.dots i {
+  margin-right: 2px;
+}
+
+.dots i:nth-child(1) {
+  color: #f57e7d;
+}
+
+.dots i:nth-child(2) {
+  color: #ffc881;
+}
+
+.dots i:nth-child(3) {
+  color: #82cf85;
+}
+
+.window-area {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 auto;
+  height: 500px;
 }
 
-input {
-  font-size: 21px;
+.input-area {
+  background: #f5f5f5;
+  padding: 20px;
+  width: 300px;
+}
+
+.field-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.field-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: #777;
+  transform-origin: top left;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.field-group input {
+  font-family: inherit;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  outline: none;
+  font-size: 18px;
+  padding: 5px;
+  background: transparent;
+  width: 100%;
+}
+
+.field-group input:focus {
+  border-bottom-color: #5c9ead;
+}
+
+.field-group input:focus + label,
+.field-group input:not(:placeholder-shown) + label {
+  font-size: 12px;
+  transform: translateY(-100%);
+  color: #5c9ead;
+}
+
+.field-group input:not(:placeholder-shown) {
+  padding-top: 20px;
+}
+
+.field-group input::placeholder {
+  color: #ccc;
 }
 
 #input-button {
@@ -42,18 +124,44 @@ input {
 }
 
 .chat-container {
-  flex: 1;
-  width: 100%;
+  border-top: 1px solid #cfdae1;
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
 }
 
 #chat-log {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.6;
+  color: #555;
 }
 
 #chat-log i {
   margin-right: 10px;
-  color: #fff;
+  color: #555;
   border-radius: 5px;
+}
+
+#chat-log .user-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#chat-log .user-message .user-icon {
+  margin-right: 10px;
+  color: #4caf50;
+}
+
+#chat-log .bot-message {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+#chat-log .bot-message .bot-icon {
+  margin-left: 10px;
+  color: #f57e7d;
 }
