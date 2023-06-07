@@ -27,7 +27,7 @@ This project was inspired by AsmrProg's "**ChatGPT Bot Coding project**" and Owe
 ## Credits
 
 - Inspired by AsmrProg's ChatGPT Bot Coding project: [Link to AsmrProg's project](https://github.com/asmrprog/chatgpt-bot-coding)
-- Inspired by the One click personal trainer w/ macros prompt on Snack Prompt: [Link to Snack Prompt](https://snackprompts.simonbook.co/](https://snackprompt.com/prompt/one-click-personal-trainer-w-macros/)
+- Inspired by the One click personal trainer w/ macros prompt on Snack Prompt: [Link to Snack Prompt](https://snackprompt.com/prompt/one-click-personal-trainer-w-macros/)
 - Icons provided by Font Awesome: [Link to Font Awesome](https://fontawesome.com/)
 
 ## Interface Screenshot:
