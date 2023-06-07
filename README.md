@@ -6,12 +6,25 @@ A simple web-based FitnessTrainer Bot that generates a workout plan.
 - HTML
 - CSS
 - JavaScript
+- [Rapid API ChatGPT](https://rapidapi.com/Glavier/api/chatgpt53) - Used for generating interactive chatbot responses.
 
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/your-username/FitnessTrainer-Bot.git`
-2. Open the project folder.
-3. Open `index.html` in your web browser.
+2. Generate an API key:
+    - Visit the ChatGPT53 API on RapidAPI.
+    - Sign up for an account (if you don't have one already).
+    - Subscribe to the ChatGPT53 API and generate an API key.
+3. Update the API key in the code:
+    - Open the index.js file in the project.
+    - Locate these lines of code and replace the content of quotated string in commented line with your generated API key.
+    ``` headers: {
+          "content-type": "application/json",
+          // "X-RapidAPI-Key": "enter your api key here",
+          "X-RapidAPI-Host": "chatgpt53.p.rapidapi.com",
+        },
+4. Open the project folder.
+5. Open `index.html` in your web browser.
 
 ## How to use
 
