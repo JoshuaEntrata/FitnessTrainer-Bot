@@ -17,7 +17,7 @@ This project was inspired by AsmrProg's "**ChatGPT Bot Coding project**" and Owe
 2. Open the project folder.
 3. Open `index.html` in your web browser.
 
-## Usage
+## How to use
 
 1. Open the FitnessTrainer Bot in your web browser.
 2. Fill in the required information such as age, gender, weight, height, and fitness goals.
