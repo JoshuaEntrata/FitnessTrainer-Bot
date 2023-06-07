@@ -1,15 +1,21 @@
-const chatLog = document.getElementById("chat-log");
+const inputAge = document.getElementById("input-age");
+const inputGender = document.getElementById("input-gender");
+const inputWeight = document.getElementById("input-weight");
+const inputHeight = document.getElementById("input-height");
+const inputGoal = document.getElementById("input-goal");
 const btn = document.getElementById("input-button");
 const buttonIcon = document.getElementById("button-icon");
+const chatLog = document.getElementById("chat-log");
+const initialMessage = document.getElementById("initial-chat");
 
 btn.addEventListener("click", sendMessage);
 
 function sendMessage() {
-  const age = document.getElementById("input-age").value;
-  const gender = document.getElementById("input-gender").value;
-  const weight = document.getElementById("input-weight").value;
-  const height = document.getElementById("input-height").value;
-  const goal = document.getElementById("input-goal").value;
+  const age = inputAge.value;
+  const gender = inputGender.value;
+  const weight = inputWeight.value;
+  const height = inputHeight.value;
+  const goal = inputGoal.value;
 
   const m1 =
     "You are a highly renowned health and nutrition expert FitnessGPT. Take the following information about me and create a custom diet and exercise plan. I am ";
@@ -20,11 +26,14 @@ function sendMessage() {
 
   const chatmsg = `${m1}${age}, ${gender}, ${height}. ${m2}${weight}. ${m3}${goal}. ${m4}`;
 
-  document.getElementById("input-age").value = "";
-  document.getElementById("input-gender").value = "";
-  document.getElementById("input-weight").value = "";
-  document.getElementById("input-height").value = "";
-  document.getElementById("input-goal").value = "";
+  inputAge.disabled = true;
+  inputGender.disabled = true;
+  inputWeight.disabled = true;
+  inputHeight.disabled = true;
+  inputGoal.disabled = true;
+
+  buttonIcon.classList.remove("fa-solid", "fa-paper-plane");
+  buttonIcon.classList.add("fas", "fa-spinner", "fa-pulse");
 
   const options = {
     method: "POST",
@@ -41,23 +50,21 @@ function sendMessage() {
     .then((response) => {
       appendMessage("bot", response.choices[0].message.content);
 
-      buttonIcon.classList.add("fa-solid", "fa-paper-plane");
-      buttonIcon.classList.remove("fas", "fa-spinner", "fa-pulse");
+      btn.removeEventListener("click", sendMessage);
+      btn.addEventListener("click", refreshChat);
+      btn.innerHTML = '<i class="fas fa-sync-alt"></i>';
     })
     .catch((err) => {
       if (err.name === "TypeError") {
         appendMessage("bot", "Error: Check Your API Key!");
-
-        buttonIcon.classList.add("fa-solid", "fa-paper-plane");
-        buttonIcon.classList.remove("fas", "fa-spinner", "fa-pulse");
       }
+
+      buttonIcon.classList.add("fa-solid", "fa-paper-plane");
+      buttonIcon.classList.remove("fas", "fa-spinner", "fa-pulse");
     });
 }
 
 function appendMessage(sender, message) {
-  buttonIcon.classList.remove("fa-solid", "fa-paper-plane");
-  buttonIcon.classList.add("fas", "fa-spinner", "fa-pulse");
-
   const messageElement = document.createElement("div");
   const iconElement = document.createElement("div");
   const chatElement = document.createElement("div");
@@ -68,9 +75,28 @@ function appendMessage(sender, message) {
   messageElement.classList.add(sender);
   messageElement.innerText = message;
 
+  if (sender === "bot") {
+    icon.classList.add("fas", "fa-robot");
+  }
+
   iconElement.appendChild(icon);
   chatElement.appendChild(iconElement);
   chatElement.appendChild(messageElement);
   chatLog.appendChild(chatElement);
   chatLog.scrollTo(0, chatLog.scrollHeight);
+}
+
+function refreshChat() {
+  inputAge.value = "";
+  inputGender.value = "";
+  inputWeight.value = "";
+  inputHeight.value = "";
+  inputGoal.value = "";
+  chatLog.innerHTML = "";
+
+  chatLog.appendChild(initialMessage.cloneNode(true));
+
+  btn.removeEventListener("click", refreshChat);
+  btn.addEventListener("click", sendMessage);
+  btn.textContent = "Send";
 }
