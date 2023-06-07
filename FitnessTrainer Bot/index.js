@@ -98,5 +98,5 @@ function refreshChat() {
 
   btn.removeEventListener("click", refreshChat);
   btn.addEventListener("click", sendMessage);
-  btn.textContent = "Send";
+  buttonIcon.classList.add("fas", "fa-paper-plane");
 }
