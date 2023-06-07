@@ -1,10 +1,6 @@
 # FitnessTrainer-Bot
 A simple web-based FitnessTrainer Bot that generates a workout plan.
 
-## Description
-
-This project was inspired by AsmrProg's "**ChatGPT Bot Coding project**" and Owen Zalenski's "**One click personal trainer w/ macros prompt**". The goal of this project is to provide users with a custom workout plan based on their input.
-
 ## Technologies used
 
 - HTML
