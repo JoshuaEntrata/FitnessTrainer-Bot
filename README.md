@@ -16,7 +16,7 @@ A simple web-based FitnessTrainer Bot that generates a workout plan.
     - Sign up for an account (if you don't have one already).
     - Subscribe to the ChatGPT53 API and generate an API key.
 3. Update the API key in the code:
-    - Open the index.js file in the project.
+    - Open the `index.js` file in the project.
     - Locate these lines of code and replace the content of quotated string in commented line with your generated API key.
     ``` headers: {
           "content-type": "application/json",
